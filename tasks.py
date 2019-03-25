@@ -79,6 +79,7 @@ concept = {
     "a bit of basil": 1,
     "supa gentleman's concrete caliphate": 1,
     "[report of the week|food review]": 1,
+    "alt [left|right]": 1,
 }
 
 verb = {
@@ -159,6 +160,7 @@ person = {
     "a stranger": 0.5,
     "not one of the boiss": 0.5,
     "the person who called the bot": 0.2,
+    "the last person to touch a {noun}": 100,
 }
 
 place = {
@@ -170,6 +172,8 @@ place = {
     "Woolies": 1,
     "somewhere with [grass|water]": 1,
     "the {extreme} place[| you know]": 1,
+    "Christies [Downs|Downies]": 1,
+    "Mt Barker": 1,
 }
 
 number = {
@@ -228,7 +232,7 @@ start = {
     "holding your hands behind your back at all times, ": 1,
     "everyone on Discord[| right now], ": 1,
     "[your task is to|you must] ": 2,
-    "without anyone else knowing, ": 1,
+    "This task is for {person}. without anyone else knowing, ": 1,
     "to win, ": 1,
     "{person} is the judge this round. Everyone else, ": 2,
 }
@@ -241,7 +245,7 @@ middle = {
     "[play|live stream|win|lose] a game of {game}[| with {person}| against {person}]": 1,
     "[say|write down|post in discord] as many types of {noun} as possible": 1,
     "balance [{a_noun}|at least {number} {nouns}|as many {nouns} as possible] on [a {noun}|your head]": 2,
-    "draw[| a picture of|, using MS paint,|, using only condiments,] [{a_noun}|a portrait of {person}|what '{concept}' means to you]": 2,
+    "draw[|, using MS paint,|, using only condiments,] [a picture of {a_noun}|a portrait of {person}|what '{concept}' means to you]": 2,
     "make a Discord chat for all things '[{noun}|{concept}]' related": 1,
     "collect the lowest unique number of {nouns}": 1,
     "hold a {noun} and a {noun} in the same hand without the two touching": 1,
