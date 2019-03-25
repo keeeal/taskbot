@@ -17,12 +17,15 @@ noun = {
     "fast food wrapper": 1,
     "piece of paper": 1,
     "[|RGB ]keyboard": 1,
-    "mouse": 1,
     "fidget spinner": 1,
     "Nickleback album": 1,
     "pizza": 1,
     "[coles|weed] cookie": 1,
     "croissant": 1,
+    "flute": 1,
+    "guitar": 1,
+    "dirty dish": 1,
+    "kale soup": 1,
 }
 
 nouns = {
@@ -44,13 +47,14 @@ nouns = {
     "fast food wrappers": 1,
     "pieces of paper": 1,
     "[|RGB ]keyboards": 1,
-    "mice": 1,
     "fidget spinners": 1,
     "socks that belong to [Perky|{person}]": 1,
     "Nickleback albums": 1,
     "slices of pizza": 1,
     "[coles|weed] cookies": 1,
     "croissants": 1,
+    "flutes": 1,
+    "dirty dishes": 1,
 }
 
 concept = {
@@ -72,8 +76,9 @@ concept = {
     "Mr 100k": 1,
     "homework": 1,
     "sammasambuddhassa namo tasso bhagavato arahato": 1,
-    "[hydroponic lettuce|'basil']": 1,
+    "a bit of basil": 1,
     "supa gentleman's concrete caliphate": 1,
+    "[report of the week|food review]": 1,
 }
 
 verb = {
@@ -112,13 +117,13 @@ event = {
     "Logan next loses a game": 1,
     "Nano next talks about V8's": 1,
     "James H-Bean next drinks a beer": 1,
-    "Jarrad spills a drink on his keyboard": 1,
-    "Jarrad plays the flute": 1,
-    "Kyle eats koofka": 1,
-    "Beans takes a life": 1,
-    "Pouria green dots the chat": 1,
-    "Prakash dogs the bois": 0.01,
-    "Beatsbot breaks down": 1,
+    "Jarrad next spills a drink on his keyboard": 1,
+    "Jarrad next plays the flute": 1,
+    "Kyle next eats koofka": 1,
+    "Beans next takes a life": 1,
+    "Pouria next green dots the chat": 1,
+    "Prakash next dogs the bois": 0.01,
+    "Beatsbot next breaks down": 1,
     "Jarrad turns 100": 1,
 }
 
@@ -200,6 +205,9 @@ game = {
     "table tennis": 1,
     "Don Bradman cricket": 1,
     "Runescape": 2,
+    "Osu": 1,
+    "Smite": 1,
+    "soccer": 1,
 }
 
 a_noun = {
