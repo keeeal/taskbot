@@ -112,6 +112,14 @@ event = {
     "Logan next loses a game": 1,
     "Nano next talks about V8's": 1,
     "James H-Bean next drinks a beer": 1,
+    "Jarrad spills a drink on his keyboard": 1,
+    "Jarrad plays the flute": 1,
+    "Kyle eats koofka": 1,
+    "Beans takes a life": 1,
+    "Pouria green dots the chat": 1,
+    "Prakash dogs the bois": 0.01,
+    "Beatsbot breaks down": 1,
+    "Jarrad turns 100": 1,
 }
 
 extreme = {
