@@ -16,7 +16,7 @@ def main():
     @client.event
     async def on_message(message):
         if message.content.startswith(BOT_SIGN):
-            command = message.content.replace(BOT_SIGN, '').strip()
+            command = message.content[len(BOT_SIGN):].strip()
             reply = 'Unknown command: \"' + command + '\"'
 
             if command == '':

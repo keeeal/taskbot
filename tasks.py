@@ -73,12 +73,13 @@ concept = {
     "homework": 1,
     "sammasambuddhassa namo tasso bhagavato arahato": 1,
     "[hydroponic lettuce|'basil']": 1,
+    "supa gentleman's concrete caliphate": 1,
 }
 
 verb = {
     "[find|locate]": 1,
     "touch": 1,
-    "diddle": 1,
+    "diddle": 0.2,
     "hide": 1,
     "make a sculpture of": 1,
     "[make|create]": 1,
@@ -132,7 +133,6 @@ extreme = {
 }
 
 person = {
-    "You, the reader": 0.2,
     "Perky": 1,
     "Jarrad": 1,
     "Travis": 1,
@@ -145,6 +145,7 @@ person = {
     "Kyle": 1,
     "a stranger": 0.5,
     "not one of the boiss": 0.5,
+    "the person who called the bot": 0.2,
 }
 
 place = {
@@ -206,12 +207,14 @@ n_nouns = {
 start = {
     "form two teams, then ": 1,
     "camouflage yourself, then ": 0.1,
-    "starting at {place}, ": 1,
-    "tie up {person}. He/she must then ": 1,
+    "starting at {place}[| you know| you can find], ": 1,
+    "tie up {person}. Before he/she get free, ": 1,
     "holding your hands behind your back at all times, ": 1,
-    "everyone on Discord[| right now] must ": 1,
-    "[your task is to|you must] ": 1,
+    "everyone on Discord[| right now], ": 1,
+    "[your task is to|you must] ": 2,
     "without anyone else knowing, ": 1,
+    "to win, ": 1,
+    "{person} is the judge this round. Everyone else, ": 2,
 }
 
 middle = {
@@ -219,7 +222,7 @@ middle = {
     "get [{a_noun}|{n_nouns}] to [{person}|{place}]": 2,
     "get {a_noun} across a[n| makeshift] obstacle course": 0.5,
     "buy [{a_noun}|{a_noun} for {person}|the {extreme} gift for {person}] with {money}": 1,
-    "[play|live stream|win|lose] a game of {game}[| with {person}| vs. {person}]": 1,
+    "[play|live stream|win|lose] a game of {game}[| with {person}| against {person}]": 1,
     "[say|write down|post in discord] as many types of {noun} as possible": 1,
     "balance [{a_noun}|at least {number} {nouns}|as many {nouns} as possible] on [a {noun}|your head]": 2,
     "draw[| a picture of|, using MS paint,|, using only condiments,] [{a_noun}|a portrait of {person}|what '{concept}' means to you]": 2,
@@ -229,7 +232,7 @@ middle = {
     "secretly steal [a {noun}|{money}] from {person}[| then give it back]": 1,
     "get {person}'s attention using [his/her middle name|a {noun}]": 1,
     "describe a trailer for '{concept}: the movie[| 2| 2 - revenge of the {nouns}]'": 0.2,
-    "({person}) hide yourself. Everyone else must find you": 1,
+    " hide yourself. {person} must try to find you": 1,
 }
 
 end = {
@@ -278,8 +281,13 @@ def parse(string):
             key = string[i+1:j-1]
             string = string[:i] + parse(get(key)) + string[j:]
         else:
-            return string
+            break
+
+    return string
 
 def get_task():
     t = parse(get('task'))
     return t[0].upper() + t[1:]
+
+if __name__ == '__main__':
+    print(get_task())
