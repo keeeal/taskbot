@@ -26,6 +26,7 @@ noun = {
     "guitar": 1,
     "dirty dish": 1,
     "kale soup": 1,
+    "pair of headphones": 1,
 }
 
 nouns = {
@@ -55,9 +56,11 @@ nouns = {
     "croissants": 1,
     "flutes": 1,
     "dirty dishes": 1,
+    "pairs of headphones": 1,
 }
 
 concept = {
+    "[|dank] memes": 1,
     "mystery skin": 1,
     "discord": 1,
     "[|bad |discord |beats|quoth]bot": 1,
@@ -71,7 +74,7 @@ concept = {
     "un-epic may-mays": 1,
     "CentreLink": 1,
     "food vids": 1,
-    "r/[watchpeopledie|cringe]": 1,
+    "{subreddit}": 1,
     "[Destiny|Density][| debate]": 1,
     "Mr 100k": 1,
     "homework": 1,
@@ -80,6 +83,7 @@ concept = {
     "supa gentleman's concrete caliphate": 1,
     "[report of the week|food review]": 1,
     "alt [left|right]": 1,
+    "reddit": 1,
 }
 
 verb = {
@@ -160,7 +164,7 @@ person = {
     "a stranger": 0.5,
     "not one of the boiss": 0.5,
     "the person who called the bot": 0.2,
-    "the last person to touch a {noun}": 100,
+    "the last person to touch a {noun}": 0.2,
 }
 
 place = {
@@ -214,6 +218,26 @@ game = {
     "soccer": 1,
 }
 
+subreddit = {
+    "r/cringe": 1,
+    "r/hexixwhiza": 1,
+    "r/watchpeopledie": 1,
+    "r/thedonald": 1,
+    "r/videos": 1,
+    "r/destiny": 1,
+    "r/pics": 1,
+    "r/funny": 1,
+    "r/me_irl": 1,
+    "r/atheism": 1,
+    "r/headphones": 1,
+    "r/mechanicalkeyboards": 1,
+    "r/gaming": 1,
+    "r/askreddit": 1,
+    "r/iama": 1,
+    "r/creepy": 1,
+    "r/memes": 1,
+}
+
 a_noun = {
     "[a|a {adj}|the {extreme}] {noun}": 1,
     "the closest object on your [left|right]": 0.1,
@@ -241,7 +265,7 @@ middle = {
     "{verb} [{a_noun}|{n_nouns}|a {noun}-related item]": 3,
     "get [{a_noun}|{n_nouns}] to [{person}|{place}]": 2,
     "get {a_noun} across a[n| makeshift] obstacle course": 0.5,
-    "buy [{a_noun}|{a_noun} for {person}|the {extreme} gift for {person}] with {money}": 1,
+    "[buy|obtain] [{a_noun}|{a_noun} for {person}|the {extreme} gift for {person}] with {money}": 1,
     "[play|live stream|win|lose] a game of {game}[| with {person}| against {person}]": 1,
     "[say|write down|post in discord] as many types of {noun} as possible": 1,
     "balance [{a_noun}|at least {number} {nouns}|as many {nouns} as possible] on [a {noun}|your head]": 2,
@@ -305,9 +329,25 @@ def parse(string):
 
     return string
 
+def caps(string):
+    result, stop = '', True
+
+    for char in string:
+        if char == ' ':
+            result += char
+        elif char == '.':
+            stop = True
+            result += char
+        elif stop:
+            stop = False
+            result += char.upper()
+        else:
+            result += char
+
+    return result
+
 def get_task():
-    t = parse(get('task'))
-    return t[0].upper() + t[1:]
+    return caps(parse(get('task')))
 
 if __name__ == '__main__':
     print(get_task())
